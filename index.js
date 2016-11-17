@@ -1,6 +1,8 @@
-import { NativeModules } from 'react-native';
+import { NativeModules, Platform } from 'react-native';
 
 const { GoogleCast } = NativeModules;
+
+if (Platform.OS === 'ios') GoogleCast = {}
 
 export default {
   startScan: function () {
